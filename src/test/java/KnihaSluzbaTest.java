@@ -1,30 +1,29 @@
-package cz.czechitas.ukol07;
-
 import cz.czechitas.ukol07.Kniha;
 import cz.czechitas.ukol07.KnihaSluzba;
 import org.junit.jupiter.api.Test;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
+import java.io.IOException;
 
 
 class KnihaSluzbaTest {
 
     @Test
-    void testVratitSeznamKnih() {
+    void testVratitSeznamKnih() throws IOException {
         KnihaSluzba knihaSluzba = new KnihaSluzba();
         List<Kniha> knihy = knihaSluzba.vratitSeznamKnih();
-        assertEquals(10, knihy.size());
+        assertEquals(14, knihy.size());
     }
 
     @Test
-    void testVratitPodleAutora() {
+    void testVratitPodleAutora() throws IOException {
         KnihaSluzba knihaSluzba = new KnihaSluzba();
         List<Kniha> knihy = knihaSluzba.vratitPodleAutora("Rowling");
         assertEquals(2, knihy.size());
     }
 
     @Test
-    void testVratitPodleRoku() {
+    void testVratitPodleRoku()  throws IOException  {
         KnihaSluzba knihaSluzba = new KnihaSluzba();
         List<Kniha> knihy = knihaSluzba.vratitPodleRoku(1997);
         assertEquals(1, knihy.size());
