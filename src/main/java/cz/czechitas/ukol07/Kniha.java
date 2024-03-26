@@ -6,6 +6,9 @@ public class Kniha {
     }
 
     public void setAutor(String autor) {
+        if (autor == null) {
+            throw new IllegalArgumentException("Jméno autora nesmí být prázdné.");
+        }
         this.autor = autor;
     }
 
@@ -14,6 +17,9 @@ public class Kniha {
     }
 
     public void setNazev(String nazev) {
+        if (nazev == null) {
+            throw new IllegalArgumentException("Název knihy nesmí být prázdný.");
+        }
         this.nazev = nazev;
     }
 
@@ -22,6 +28,9 @@ public class Kniha {
     }
 
     public void setRokVydani(int rokVydani) {
+        if (rokVydani < 1440) {
+            throw new IllegalArgumentException("Rok vydání nesmí být starší, než je vynález knihtisku.");
+        }
         this.rokVydani = rokVydani;
     }
 
