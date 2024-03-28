@@ -27,6 +27,25 @@ class KnihaSluzbaTest {
         KnihaSluzba knihaSluzba = new KnihaSluzba();
         List<Kniha> knihy = knihaSluzba.vratitPodleRoku(1997);
         assertEquals(1, knihy.size());
+
+    }
+
+    @Test
+    void testVratitPrazdnyNazev() {
+        Kniha kniha = new Kniha();
+        assertThrows(IllegalArgumentException.class, () -> kniha.setNazev(null));
+    }
+
+    @Test
+    void testVratitPrazdnyAutor() {
+        Kniha kniha = new Kniha();
+        assertThrows(IllegalArgumentException.class, () -> kniha.setAutor(null));
+    }
+
+    @Test
+    void testVratitRokVydaniPredKnihtiskem() {
+        Kniha kniha = new Kniha();
+        assertThrows(IllegalArgumentException.class, () -> kniha.setRokVydani(1439));
     }
 
 }
