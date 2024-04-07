@@ -23,7 +23,7 @@ public class KnihaSluzba {
 
     public List<Kniha> vratitPodleAutora(String autor) {
         return SeznamKnih.stream()
-                .filter(kniha -> kniha.getAutor().toLowerCase().contains(autor.toLowerCase()))
+                .filter(kniha -> kniha.getAutor().equals(autor))
                 .toList();
     }
 

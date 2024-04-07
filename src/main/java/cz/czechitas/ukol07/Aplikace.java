@@ -7,10 +7,14 @@ import java.io.IOException;
  * Spouštěcí třída aplikace
  */
 public class Aplikace {
+    private static KnihaSluzba knihaSluzba;
 
     public static void main(String[] args) throws IOException{
-        KnihaSluzba knihaSluzba = new KnihaSluzba();
+        knihaSluzba = new KnihaSluzba();
+        new Aplikace().spustit();
+    }
 
+    public void spustit() {
         List<Kniha> SeznamKnih = knihaSluzba.vratitSeznamKnih();
         System.out.println("celkový počet knih v naší malé databázi: " + SeznamKnih.size());
 
